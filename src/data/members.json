@@ -1,0 +1,57 @@
+[
+  {
+    "image": "Anabelle.jpg",
+    "name": "Anabelle",
+    "role": "Voix, Violon",
+    "description": "Musicienne inspirée, elle étudie le violon au conservatoire de 7 à 15 ans avant de se tourner vers le chant en rejoignant un groupe de musiques actuelles. Depuis un an, elle s'investit sérieusement dans la composition et envisage de développer ce projet de manière professionnelle en parallèle du groupe. Ouverte à de nombreux genres musicaux, elle est particulièrement férue de pop,funk, et electro, s'inspirant d'artistes tels que Jamiroquai, Daft Punk, et Michael Jackson."
+  },
+
+  {
+    "image": "Alexandre.jpg",
+    "name": "Alexandre",
+    "role": "Guitare",
+    "description": "Fervent musicien, il a d'abord découvert la musique sous l'impulsion de son père avec le piano, puis s'est tourné vers la guitare à 12 ans. Après une pause pour se consacrer à la danse, il a redécouvert la guitare lors d'un voyage avec Thomas, qui l'a poussé à se replonger dans la pratique. Depuis, il a suivi des cours de blues et de rock, et s'est récemment orienté vers le jazz, passant ses cycles au conservatoire. Actuellement, il travaille sur un projet jazz inspiré par l'artiste Daoud, témoignant de sa passion dévorante pour le genre."
+  },
+
+  {
+    "image": "Athéna.jpg",
+    "name": "Athéna",
+    "role": "Batterie, Piano",
+    "description": "Musicienne depuis toujours, elle a commencé son éveil musical au conservatoire dès l'âge de 3 ans, avant de se consacrer pendant dix ans au violon et de découvrir la guitare électrique en 2018. Influencée par des genres variés tels que l'électro, le funk et la bossa nova, elle a aussi eu le singulier honneur de chanter dans le micro de Philippe Katerine à l'Olympia. Actuellement batteuse et clavieriste à Enalion, elle se concentre sur l'organisation des événements musicaux."
+  },
+
+  {
+    "image": "Clément.jpg",
+    "name": "Clément",
+    "role": "Basse",
+    "description": "Musicien accompli, il débute le violoncelle à l'âge de 6 ans avant de se réorienter vers la basse à 18 ans, tout en développant ses compétences en musique assistée par ordinateur. Son univers musical est riche et éclectique, mêlant funk, jazz fusion, electro et dubstep, avec une admiration particulière pour des artistes tels que Louis Cole ou Savant. Actuellement, il se consacre à la production musicale et aspire à composer des bandes originales pour jeux vidéo de manière semi-professionnelle."
+  },
+
+  {
+    "image": "Laure.jpg",
+    "name": "Laure",
+    "role": "Voix",
+    "description": "Musicienne passionnée, elle a commencé le piano au conservatoire de 7 à 14 ans avant de se former en autodidacte à la musique assistée par ordinateur, au piano et à la voix. Actuellement en licence Musique et Métiers du Son, elle aspire à enregistrer des sons et à se consacrer à la production et au mixage, ainsi que de continuer à jouer en groupe en parallèle. Sa voix pop puissante et délicate n'a d'égal que son flegme et son humour, ajoutant une dimension unique à sa personnalité sur scène."
+  },
+
+  {
+    "image": "Manoé.jpg",
+    "name": "Manoé",
+    "role": "Batterie, Piano",
+    "description": "Musicien polyvalent, il a étudié au conservatoire de Malakoff et a joué pendant plusieurs années dans l'association de rock 3quatre. Passionné par les ponts entre le jazz et la musique pop, il adore jouer en groupe, pratiquant entre autre le piano, la batterie et la basse. Se consacrant aux solos improvisés et aux harmonies étendues, il participe à plusieurs projets musicaux pour développer ses compositions et enrichir son univers musical."
+  },
+
+  {
+    "image": "Thomas.jpg",
+    "name": "Thomas",
+    "role": "Guitare",
+    "description": "Musicien autodidacte, il a commencé la percussion à 5 ans avec le djembe comme premier instrument. Après avoir pratiqué la batterie en école de musique et joué dans des groupes de rock, il découvre sa passion pour la guitare pendant le confinement, une révélation qui a transformé son parcours musical. Influencé par des légendes du hard rock comme AC/DC et Metallica, il s'inspire également d'artistes tels que Les Beatles, B.B. King et John Mayer. Actuellement, il vise à s'améliorer jour après jour en travaillant le jazz, l'improvisation et le solfège."
+  },
+
+  {
+    "image": "Yaoni.jpg",
+    "name": "Yaoni",
+    "role": "Batterie, Guitare",
+    "description": "Musicien depuis son plus jeune âge, il a exploré divers styles musicaux, du métal au jazz, tout en développant ses compétences en guitare en cours, batterie et basse en autodidacte. Ses cours de technique musicale et son passage au conservatoire dans l'atelier de musique expérimentale ont enrichi sa pratique de la musique assistée par ordinateur et du mix. Passionné par les musiques alternatives, ethniques et les standards de jazz, il aspire à atteindre un haut niveau d'autoproduction musicale en expérimentant de nouvelles sonorités, et en explorant et mélangeant les genres."
+  }
+]
