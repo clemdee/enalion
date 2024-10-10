@@ -121,3 +121,15 @@ const opened = ref(false);
   }
 }
 </style>
+
+<style lang="scss">
+// Darken images under menu so that links stay readable
+@media (max-width: 40rem) {
+  html:has(nav .links.opened) {
+    img {
+      transition: filter 500ms ease;
+      filter: grayscale(0.9) brightness(0.35);
+    }
+  }
+}
+</style>
