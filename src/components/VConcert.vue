@@ -96,6 +96,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import VDetails from '~/components/VDetails.vue';
+import { useDateTimeData } from '~/composables/date';
+import { concatString } from '~/composables/utils';
 import VImage from './VImage.vue';
 
 const props = defineProps<{
@@ -115,82 +117,98 @@ const image = computed(() => props.concert.image
   : undefined,
 );
 
-const useDateTimeData = ({ date, time }: { date: string, time?: string }) => {
-  interface ParsedDate {
-    year: string
-    month?: string
-    day?: string
-  }
-
-  interface ParsedTime {
-    hours?: string
-    minutes?: string
-    pastMidnight?: boolean
-  }
-
-  const dateRegex = /(?<year>\d{4})(?:-(?<month>\d{2})(?:-(?<day>\d{2}))?)?/;
-  const timeRegex = /(?<pastMidnight>!)?(?<hours>\d{2}):(?<minutes>\d{2})/;
-
-  const parsedDate = date.match(dateRegex)?.groups ?? {} as ParsedDate;
-  const parsedTime = time?.match(timeRegex)?.groups ?? {} as ParsedTime;
-  if (parsedTime.pastMidnight) {
-    parsedTime.pastMidnight = true;
-  }
-
-  const dateWithDefaults = new Date(
-    +parsedDate.year,
-    +(parsedDate.month ?? 1) - 1,
-    +(parsedDate.day ?? 1),
-    +(parsedTime.hours ?? 0),
-    +(parsedTime.minutes ?? 0),
-  );
-
-  const lang = 'fr';
-
-  return computed(() => ({
-    date: dateWithDefaults,
-    year: parsedDate.year,
-    month: parsedDate.month,
-    monthLong: dateWithDefaults.toLocaleDateString(lang, { month: 'long' }),
-    monthShort: dateWithDefaults.toLocaleDateString(lang, { month: 'short' }),
-    day: parsedDate.day,
-    weekdayLong: dateWithDefaults.toLocaleDateString(lang, { weekday: 'long' }),
-    weekdayShort: dateWithDefaults.toLocaleDateString(lang, { weekday: 'short' }),
-    hours: parsedTime.hours,
-    minutes: parsedTime.minutes,
-    pastMidnight: parsedTime.pastMidnight,
-  }));
-};
-
-const d = useDateTimeData({
+const dateData = useDateTimeData({
   date: props.concert.date,
   time: props.concert.time,
 });
 
-const summaryDate = computed(() => {
-  if (!d.value.month) {
-    return `${d.value.year}`;
-  }
-  if (!d.value.day) {
-    return `${d.value.monthShort} ${d.value.year}`;
-  }
-  return `${d.value.day} ${d.value.monthShort} ${d.value.year}`;
+const yesterdayData = computed(() => {
+  const yesterday = new Date(dateData.value.date);
+  yesterday.setDate(yesterday.getDate() - 1);
+  return useDateTimeData({
+    date: yesterday,
+  }).value;
 });
 
+const summaryDate = computed(() => {
+  const data = dateData.value.pastMidnight
+    ? yesterdayData
+    : dateData;
+  return concatString([
+    data.value.day,
+    data.value.monthShort,
+    data.value.year,
+  ]);
+});
+
+const getPastMidnightDateDescription = () => {
+  if (yesterdayData.value.date.getFullYear() !== dateData.value.date.getFullYear()) {
+    return [
+      yesterdayData.value.weekdayShort,
+      yesterdayData.value.day,
+      yesterdayData.value.monthLong,
+      yesterdayData.value.year,
+      'au',
+      dateData.value.day,
+      dateData.value.monthLong,
+      dateData.value.year,
+    ];
+  }
+  else if (yesterdayData.value.date.getMonth() !== dateData.value.date.getMonth()) {
+    return [
+      yesterdayData.value.weekdayShort,
+      yesterdayData.value.day,
+      yesterdayData.value.monthLong,
+      'au',
+      dateData.value.day,
+      dateData.value.monthLong,
+      dateData.value.year,
+    ];
+  }
+  else {
+    return [
+      yesterdayData.value.weekdayShort,
+      yesterdayData.value.day,
+      'au',
+      dateData.value.weekdayShort,
+      dateData.value.day,
+      dateData.value.monthLong,
+      dateData.value.year,
+    ];
+  }
+};
+
 const descriptionDateTime = computed(() => {
-  if (!d.value.month) {
-    return `${d.value.year} (date à préciser)`;
+  if (!dateData.value.month || !dateData.value.day) {
+    return concatString([
+      dateData.value.monthLong,
+      dateData.value.year,
+      '(date à préciser)',
+    ]);
   }
-  if (!d.value.day) {
-    return `${d.value.monthLong} ${d.value.year} (date à préciser)`;
+  if (!dateData.value.hours) {
+    return concatString([
+      dateData.value.weekdayShort,
+      dateData.value.day,
+      dateData.value.monthLong,
+      dateData.value.year,
+      '- (horaire à préciser)',
+    ]);
   }
-  if (!d.value.hours) {
-    return `${d.value.weekdayShort} ${d.value.day} ${d.value.monthLong} ${d.value.year} - (horaire à préciser)`;
+  if (dateData.value.pastMidnight) {
+    return concatString([
+      'dans la nuit du',
+      getPastMidnightDateDescription(),
+      `- ${dateData.value.hours}h${dateData.value.minutes}`,
+    ]);
   }
-  if (d.value.pastMidnight) {
-    return `dans la nuit du ${d.value.weekdayShort} ${d.value.day} ${d.value.monthLong} ${d.value.year} - ${d.value.hours}h${d.value.minutes}`;
-  }
-  return `${d.value.weekdayShort} ${d.value.day} ${d.value.monthLong} ${d.value.year} - ${d.value.hours}h${d.value.minutes}`;
+  return concatString([
+    dateData.value.weekdayShort,
+    dateData.value.day,
+    dateData.value.monthLong,
+    dateData.value.year,
+    `- ${dateData.value.hours}h${dateData.value.minutes}`,
+  ]);
 });
 </script>
 
