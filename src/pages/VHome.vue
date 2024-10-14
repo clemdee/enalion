@@ -81,7 +81,7 @@ import type { IconifyIconHTMLElement } from 'iconify-icon';
 import { useHead } from '@unhead/vue';
 import { onMounted } from 'vue';
 import Logo from '~/assets/images/logo.png?inline';
-import { wait } from '~/utils';
+import { wait } from '~/composables/utils';
 
 useHead({
   title: 'Enalion - Collectif musical',

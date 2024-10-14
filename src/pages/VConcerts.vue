@@ -75,8 +75,8 @@ import { useHead } from '@unhead/vue';
 import { ref } from 'vue';
 import VConcert from '~/components/VConcert.vue';
 import VExpandAll from '~/components/VExpandAll.vue';
+import { groupBy } from '~/composables/utils';
 import concerts from '~/data/concerts.json';
-import { groupBy } from '~/utils';
 
 useHead({
   title: 'Concerts - Enalion',
