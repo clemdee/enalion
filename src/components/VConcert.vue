@@ -79,7 +79,7 @@
 
           <p v-if="props.concert.website">
             <iconify-icon
-              icon="line-md:external-link"
+              icon="mdi:external-link"
               title="Infos"
             />
             <span class="separator" />
