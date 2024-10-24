@@ -6,7 +6,7 @@
 
     <article class="description">
       <p>
-        Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique. Leur répertoire, mélant funk et jazz, en passant par la pop et le rock, a déjà reçu d'excellents retours de la part du public lors de leurs différents concerts.
+        Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique. Leur répertoire, mélant funk et jazz, en passant par la pop et le rock, a déjà reçu d'excellents retours de la part du public lors de leurs différents concerts.
       </p>
 
       <br />
@@ -59,7 +59,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique.`,
+      content: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
     },
     {
       name: 'og:title',
@@ -67,7 +67,7 @@ useHead({
     },
     {
       name: 'og:description',
-      content: `Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique.`,
+      content: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
     },
   ],
 });

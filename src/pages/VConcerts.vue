@@ -61,10 +61,10 @@
 
     <article class="contact">
       <p>
-        Vous organisez un concert ?
+        Vous organisez un concert ?
         <RouterLink to="contact">
-          Contactez nous
-        </RouterLink> !
+          Contactez nous !
+        </RouterLink>
       </p>
     </article>
   </section>
