@@ -198,7 +198,7 @@ const upcomingOpened = ref(Array.from({ length: upcoming?.length ?? 0 }).map(() 
 
   .contact {
     margin-top: 4rem;
-    text-align: center;;
+    text-align: center;
     animation: fade-in ease-out 1.2s both;
     animation-delay: 4.5s;
 

@@ -124,10 +124,6 @@ useHead({
       @media (min-width: $--breakpoint-high) {
         &:nth-child(even) {
           flex-direction: row-reverse;
-          /*
-          align-items: flex-end;
-          margin-top: -30rem;
-          */
           text-align: right;
           text-align-last: end;
         }
