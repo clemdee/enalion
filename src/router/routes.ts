@@ -1,4 +1,5 @@
 import VDiscography from '~/pages/VDiscography.vue';
+import VReference from '~/pages/VReference.vue';
 import VCollective from '../pages/VCollective.vue';
 import VConcerts from '../pages/VConcerts.vue';
 import VContact from '../pages/VContact.vue';
@@ -25,6 +26,11 @@ const routes = [
     path: '/collective',
     name: 'collective',
     component: VCollective,
+  },
+  {
+    path: '/reference',
+    name: 'reference',
+    component: VReference,
   },
   {
     path: '/gallery',

@@ -34,6 +34,9 @@
         <RouterLink to="/collective" @click="clickHandler">
           Membres
         </RouterLink>
+        <RouterLink to="/reference" @click="clickHandler">
+          Références
+        </RouterLink>
         <RouterLink to="/gallery" @click="clickHandler">
           Gallerie
         </RouterLink>
