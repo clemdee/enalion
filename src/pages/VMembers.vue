@@ -1,5 +1,5 @@
 <template>
-  <section class="collective">
+  <section class="members">
     <h2>
       Le collectif Enalion
     </h2>
@@ -74,7 +74,7 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
-.collective {
+.members {
   // Cannot use css variables inside media queries, so using scss
   $--breakpoint-low: 50rem;
   $--breakpoint-high: 75rem;
