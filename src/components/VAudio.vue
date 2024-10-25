@@ -7,13 +7,11 @@
       <div class="audio-icon">
         <iconify-icon
           v-if="!playing"
-          class="marker"
           icon="line-md:play"
         />
 
         <iconify-icon
           v-else
-          class="marker"
           icon="line-md:pause"
         />
       </div>

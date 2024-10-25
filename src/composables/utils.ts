@@ -11,10 +11,6 @@ export const groupBy = <T, S extends string>(array: T[], fn: ((value: T) => S)) 
   return record;
 };
 
-export const getImageUrl = (name: string) => {
-  return new URL(`./dir/${name}.png`, import.meta.url).href;
-};
-
 export const concatString = (array: unknown[], separator = ' '): string => {
   return array
     .filter((item) => {
