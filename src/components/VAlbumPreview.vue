@@ -40,8 +40,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue';
-import { type Player, usePlayer } from '~/composables/player';
+import { computed, ref } from 'vue';
+import { usePlayer } from '~/composables/player';
 import { randomInt } from '~/composables/utils';
 
 const props = defineProps<{
@@ -59,13 +59,6 @@ const paths = computed(() => Object.keys(allPaths)
   .filter(path => path.startsWith(basePath.value)),
 );
 
-const player = ref<Player>();
-const playing = ref(false);
-
-onMounted(() => {
-  player.value = usePlayer();
-});
-
 // Prevent the same audios to be played again soon after it was played
 const lastPlayedLength = Math.min(5, paths.value.length - 1);
 const lastPlayed = ref<string[]>([]);
@@ -82,9 +75,9 @@ const getRandomPath = () => {
   return path;
 };
 
+const { player, playing } = usePlayer(getRandomPath);
+
 const preview = () => {
-  const path = getRandomPath();
-  player.value?.set(path, playing);
   player.value?.play();
 };
 

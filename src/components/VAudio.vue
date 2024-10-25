@@ -26,8 +26,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue';
-import { type Player, usePlayer } from '~/composables/player';
+import { computed } from 'vue';
+import { usePlayer } from '~/composables/player';
 
 const props = defineProps<{
   name: string
@@ -41,15 +41,9 @@ const resolveUrl = (path: string) => {
 const path = computed(() => resolveUrl(props.name));
 const title = computed(() => props.title ?? props.name);
 
-const player = ref<Player>();
-const playing = ref(false);
-
-onMounted(() => {
-  player.value = usePlayer();
-});
+const { player, playing } = usePlayer(path.value);
 
 const toggle = () => {
-  player.value?.set(path.value, playing);
   player.value?.toggle();
 };
 </script>
