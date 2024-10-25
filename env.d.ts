@@ -19,6 +19,7 @@ interface Concert {
 interface Album {
   name: string
   date: string
+  upcoming?: boolean
   description: string
   ids: {
     spotify: string

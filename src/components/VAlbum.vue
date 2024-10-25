@@ -16,6 +16,13 @@
         />
         {{ props.album.date }}
       </p>
+
+      <div
+        v-if="props.album.upcoming"
+        class="upcoming"
+      >
+        à venir
+      </div>
     </hgroup>
 
     <div class="content">
@@ -138,6 +145,14 @@ const props = defineProps<{
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1ch;
+      font-style: italic;
+    }
+
+    .upcoming {
+      background-color: #555;
+      padding: 0.1rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
       font-style: italic;
     }
   }
