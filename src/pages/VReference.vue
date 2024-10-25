@@ -159,7 +159,7 @@
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube-nocookie.com/embed/TlUzyCRHC9s?start=290"
+          src="https://www.youtube-nocookie.com/embed/TlUzyCRHC9s?start=306"
           title="Dance The Night - Dua Lipa"
           frameborder="0"
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
