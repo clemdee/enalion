@@ -55,20 +55,26 @@ const allPaths = import.meta.glob('/src/data/audio/discography/**', {
 
 const basePath = computed(() => `/src/data/audio/discography/${props.id}/`);
 
-const paths = computed(() => Object.keys(allPaths)
-  .filter(path => path.startsWith(basePath.value)),
+const ids = computed(() => Object.keys(allPaths)
+  .filter(path => path.startsWith(basePath.value))
+  .map(path => path.substring(basePath.value.length)),
 );
 
 // Prevent the same audios to be played again soon after it was played
-const lastPlayedLength = Math.min(5, paths.value.length - 1);
+const lastPlayedLength = Math.min(5, ids.value.length - 1);
 const lastPlayed = ref<string[]>([]);
-const possiblePaths = computed(() => {
-  return paths.value.filter(path => !lastPlayed.value.includes(path));
+const possibleIds = computed(() => {
+  return ids.value.filter(id => !lastPlayed.value.includes(id));
 });
 
+const resolvePath = (id: string) => {
+  return new URL(`/src/data/audio/discography/${props.id}/${id}`, import.meta.url).href;
+};
+
 const getRandomPath = () => {
-  const path = possiblePaths.value[randomInt(0, possiblePaths.value.length)];
-  lastPlayed.value.push(path);
+  const id = possibleIds.value[randomInt(0, possibleIds.value.length)];
+  const path = resolvePath(id);
+  lastPlayed.value.push(id);
   if (lastPlayed.value.length > lastPlayedLength) {
     lastPlayed.value.shift();
   }
@@ -80,10 +86,6 @@ const { player, playing } = usePlayer(getRandomPath);
 const preview = () => {
   player.value?.play();
 };
-
-// const resolveUrl = (id: string) => {
-//   return new URL(`/src/data/audio/discography/${id}`, import.meta.url).href;
-// };
 </script>
 
 <style lang="scss" scoped>
