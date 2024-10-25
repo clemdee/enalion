@@ -10,7 +10,7 @@
 
         <br />
 
-        Nous essayons de nous produire au minimum 3 fois par an, habituellement au sein d'évènements organisés par
+        Nous nous produisons actuellement au minimum 3 fois par an, habituellement au sein d'évènements organisés par
         <a
           href="https://www.3quatre.fr/"
           target="_blank"
@@ -26,11 +26,11 @@
       <div class="presentation image-span">
         <div class="image-span-wrapper">
           <p>
-            Nous proposons généralement des <strong>sets de 45min</strong>, même si nous sommes en mesure d'adapter la durée en fonction des besoins. Par exemple, nous avons déjà pu réaliser un double set pour une durée totale de 1h30.
+            Nous proposons généralement des <strong>sets de 1h</strong>, même si nous sommes en mesure d'adapter la durée en fonction des besoins. Par exemple, nous avons déjà pu réaliser un double set pour une durée totale de 1h30.
           </p>
 
           <p>
-            <strong>Avec 7 concerts à notre actif</strong>, certains allant jusqu'à une centaine de personnes, nous travaillons continuellement à renforcer notre jeu afin de toujours proposer une meilleure performance sur scène, ce qui a été confirmé à plusieurs reprises par des retours du public.
+            Fort de notre <strong>expérience sur scène</strong>, nous travaillons continuellement à renforcer notre jeu afin de toujours proposer une meilleure performance lors de nos concerts, ce qui a été confirmé à plusieurs reprises par des retours du public.
           </p>
         </div>
 
@@ -63,7 +63,7 @@
       <div class="image-span">
         <div class="image-span-wrapper">
           <p>
-            Nous avons aussi les connaissances et l'expertise pour organiser nos propres concerts, quand nous en avons l'occasion. Par exemple, nous avons organisé en juin 2024 un concert privé sous invitation uniquement. Nous nous sommes tenu responsable de l'organisation de bout en bout, de la <strong>planification de l'événement</strong> à <strong>l'installation du matériel</strong>.
+            Nous avons aussi les connaissances et l'expertise pour organiser nos propres concerts, quand nous en avons l'occasion. Par exemple, nous avons organisé en juillet 2024 un concert privé sous invitation uniquement. Nous nous sommes tenu responsable de l'organisation de bout en bout, de la <strong>planification de l'événement</strong> à <strong>l'installation du matériel</strong>.
           </p>
           <p>
             Nous nous sommes assurés de la qualité du setup audio, avec enregistrement de la batterie en multi-piste, amplis de retour pour chaque instrument, et balance globale de la scène et des retours.
@@ -231,7 +231,7 @@ import { useHead } from '~/composables/head';
 
 useHead({
   page: 'References',
-  description: `Nous essayons de nous produire au minimum 3 fois par an, mais nous avons pour ambition d'augmenter ce rythme, ainsi que nos lieux de représentation. Contactez-nous !`,
+  description: `Enalion est un collectif de musique composé de 8 amis, aimant partager leur passion pour la musique entre eux et avec leur public. Notre univers musical est assez riche, gravitant généralement autour de la funk et de la pop.`,
 });
 
 const resolveUrl = (id: string) => {
