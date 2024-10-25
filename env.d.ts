@@ -21,11 +21,13 @@ interface Album {
   date: string
   upcoming?: boolean
   description: string
-  ids: {
-    spotify: string
-    youtube: string
-    soundcloud: string
+  ids?: {
+    spotify?: string
+    youtube?: string
+    soundcloud?: string
+    preview?: string
   }
+  display: 'spotify' | 'youtube' | 'soundcloud' | 'preview'
 }
 
 interface Member {

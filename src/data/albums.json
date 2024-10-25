@@ -3,6 +3,10 @@
     "name": "Enalion EP",
     "date": "Décembre 2024",
     "upcoming": true,
-    "description": "Après avoir expérimenté sur scène, le collectif a décidé de matérialiser 3 de ses compositions sous la forme d'un premier EP, melant funk, pop et jazz. Plus d'infos à venir."
+    "description": "Après avoir expérimenté sur scène, le collectif a décidé de matérialiser 3 de ses compositions sous la forme d'un premier EP, melant funk, pop et jazz. Plus d'infos à venir.",
+    "ids": {
+      "preview": "EnalionEP"
+    },
+    "display": "preview"
   }
 ]
