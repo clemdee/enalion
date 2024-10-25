@@ -225,26 +225,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import VAudio from '~/components/VAudio.vue';
 import VImage from '~/components/VImage.vue';
+import { useHead } from '~/composables/head';
 
 useHead({
-  title: 'Références - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Nous essayons de nous produire au minimum 3 fois par an, mais nous avons pour ambition d'augmenter ce rythme, ainsi que nos lieux de représentation. Contactez-nous !`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Références',
-    },
-    {
-      name: 'og:description',
-      content: `Nous essayons de nous produire au minimum 3 fois par an, mais nous avons pour ambition d'augmenter ce rythme, ainsi que nos lieux de représentation. Contactez-nous !`,
-    },
-  ],
+  page: 'References',
+  description: `Nous essayons de nous produire au minimum 3 fois par an, mais nous avons pour ambition d'augmenter ce rythme, ainsi que nos lieux de représentation. Contactez-nous !`,
 });
 
 const resolveUrl = (id: string) => {

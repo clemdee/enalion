@@ -69,25 +69,12 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import { onMounted, useTemplateRef } from 'vue';
+import { useHead } from '~/composables/head';
 
 useHead({
-  title: 'Contact - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Contact',
-    },
-    {
-      name: 'og:description',
-      content: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
-    },
-  ],
+  page: 'Contact',
+  description: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
 });
 
 const emailElement = useTemplateRef('email');

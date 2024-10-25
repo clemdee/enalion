@@ -50,26 +50,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import VMember from '~/components/VMember.vue';
+import { useHead } from '~/composables/head';
 import members from '~/data/members.json';
 
 useHead({
-  title: 'Membres - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Membres',
-    },
-    {
-      name: 'og:description',
-      content: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
-    },
-  ],
+  page: 'Membres',
+  description: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
 });
 </script>
 

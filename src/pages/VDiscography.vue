@@ -15,26 +15,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import VAlbum from '~/components/VAlbum.vue';
+import { useHead } from '~/composables/head';
 import albums from '~/data/albums.json';
 
 useHead({
-  title: 'Discographie - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Écouter les derniers EPs et albums de Enalion`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Discographie',
-    },
-    {
-      name: 'og:description',
-      content: `Écouter les derniers EPs et albums de Enalion`,
-    },
-  ],
+  page: 'Discographie',
+  description: `Écouter les derniers EPs et albums de Enalion`,
 });
 </script>
 

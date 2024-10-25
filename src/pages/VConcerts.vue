@@ -71,29 +71,16 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import { ref } from 'vue';
 import VConcert from '~/components/VConcert.vue';
 import VExpandAll from '~/components/VExpandAll.vue';
+import { useHead } from '~/composables/head';
 import { groupBy } from '~/composables/utils';
 import concerts from '~/data/concerts.json';
 
 useHead({
-  title: 'Concerts - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Venir écouter Enalion en concert`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Concerts',
-    },
-    {
-      name: 'og:description',
-      content: `Venir écouter Enalion en concert`,
-    },
-  ],
+  page: 'Concerts',
+  description: `Venir écouter Enalion en concert`,
 });
 
 const today = (new Date()).valueOf();

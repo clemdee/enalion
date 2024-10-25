@@ -78,27 +78,14 @@
 
 <script lang="ts" setup>
 import type { IconifyIconHTMLElement } from 'iconify-icon';
-import { useHead } from '@unhead/vue';
 import { onMounted } from 'vue';
 import Logo from '~/assets/images/logo.png?inline';
+import { useHead } from '~/composables/head';
 import { wait } from '~/composables/utils';
 
 useHead({
   title: 'Enalion - Collectif musical',
-  meta: [
-    {
-      name: 'description',
-      content: 'Enalion est un collectif de musiciens enjoués, explorant principalement des styles musicaux tels que le rock, le funk, et le jazz.',
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion',
-    },
-    {
-      name: 'og:description',
-      content: 'Enalion est un collectif de musiciens enjoués, explorant principalement des styles musicaux tels que le rock, le funk, et le jazz.',
-    },
-  ],
+  description: `Enalion est un collectif de musiciens enjoués, explorant principalement des styles musicaux tels que le rock, le funk, et le jazz.`,
 });
 
 onMounted(() => {

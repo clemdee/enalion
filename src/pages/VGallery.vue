@@ -21,26 +21,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import images from 'virtual:ls?path=/src/data/images/gallery';
 import VImage from '~/components/VImage.vue';
+import { useHead } from '~/composables/head';
 
 useHead({
-  title: 'Gallerie - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Gallerie photo d'Enalion`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Gallerie',
-    },
-    {
-      name: 'og:description',
-      content: `Gallerie photo d'Enalion`,
-    },
-  ],
+  page: 'Gallerie',
+  description: `Gallerie photo d'Enalion`,
 });
 
 const resolveUrl = (id: string) => {
