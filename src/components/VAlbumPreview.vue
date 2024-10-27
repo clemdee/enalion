@@ -4,6 +4,7 @@
     :class="{
       playing,
     }"
+    name="preview"
     @click="preview"
   >
     <div class="icon-wrapper">

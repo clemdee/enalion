@@ -22,6 +22,7 @@
     </div>
 
     <button
+      name="open"
       @click="opened = !opened"
     >
       <iconify-icon

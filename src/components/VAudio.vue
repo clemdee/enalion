@@ -2,6 +2,7 @@
   <ClientOnly>
     <button
       class="audio"
+      :name="playing ? 'pause' : 'play'"
       @click="toggle"
     >
       <div class="audio-icon">

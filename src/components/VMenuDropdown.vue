@@ -16,6 +16,7 @@
       </RouterLink>
       <button
         class="chevron"
+        name="open"
         :disabled="opened"
         @click="openDropdown"
       >
