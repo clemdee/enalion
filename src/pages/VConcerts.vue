@@ -1,7 +1,7 @@
 <template>
   <section class="concerts">
     <article class="concerts-type concerts-upcoming">
-      <h2>
+      <h2 id="concerts-upcoming">
         Prochains concerts
       </h2>
 
@@ -37,7 +37,7 @@
     </article>
 
     <article class="concerts-type concerts-past">
-      <h2>
+      <h2 id="concerts-past">
         Concerts passés
       </h2>
 

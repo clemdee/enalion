@@ -1,6 +1,6 @@
 <template>
   <section class="reference">
-    <h2>
+    <h2 id="reference">
       Références
     </h2>
 
@@ -96,7 +96,7 @@
       </p>
     </article>
 
-    <h2>
+    <h2 id="setlist">
       Setlist
     </h2>
 

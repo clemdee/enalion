@@ -27,3 +27,9 @@ export const concatString = (array: unknown[], separator = ' '): string => {
     })
     .join(separator);
 };
+
+export const dashify = (string: string) => string
+  .normalize('NFD')
+  .replace(/\p{Diacritic}/gu, '')
+  .replace(/\W+/gu, '-')
+  .toLowerCase();

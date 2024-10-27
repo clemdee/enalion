@@ -1,6 +1,6 @@
 <template>
   <section class="members">
-    <h2>
+    <h2 id="members">
       Le collectif Enalion
     </h2>
 

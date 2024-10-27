@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <h1>
+    <h1 id="enalion">
       <img
         :src="Logo"
         alt="Enalion"

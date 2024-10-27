@@ -5,7 +5,7 @@
     <div class="circle" />
 
     <hgroup class="title">
-      <h2>
+      <h2 :id="id">
         {{ props.album.name }}
       </h2>
 
@@ -86,6 +86,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+import { dashify } from '~/composables/utils';
 import VAlbumPreview from './VAlbumPreview.vue';
 
 const props = defineProps<{
@@ -105,6 +106,8 @@ const display = computed<Album['display'] | undefined>(() => {
   });
   return undefined;
 });
+
+const id = computed(() => dashify(props.album.name));
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 <template>
   <section class="gallery">
-    <h2>
+    <h2 id="gallery">
       Gallerie photo
     </h2>
 
