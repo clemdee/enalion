@@ -63,7 +63,7 @@
       <div class="image-span">
         <div class="image-span-wrapper">
           <p>
-            Nous avons aussi les connaissances et l'expertise pour organiser nos propres concerts, quand nous en avons l'occasion. Par exemple, nous avons organisé en juillet 2024 un concert privé sous invitation uniquement. Nous nous sommes tenu responsable de l'organisation de bout en bout, de la <strong>planification de l'événement</strong> à <strong>l'installation du matériel</strong>.
+            Nous avons aussi les connaissances et l'expertise pour organiser nos propres concerts, quand nous en avons l'occasion. Par exemple, nous avons organisé en juillet 2024 un concert privé sous invitation uniquement. Nous nous sommes tenus responsables de l'organisation de bout en bout, de la <strong>planification de l'événement</strong> à <strong>l'installation du matériel</strong>.
           </p>
           <p>
             Nous nous sommes assurés de la qualité du setup audio, avec enregistrement de la batterie en multi-piste, amplis de retour pour chaque instrument, et balance globale de la scène et des retours.
@@ -110,7 +110,7 @@
       </p>
 
       <p>
-        Du coté de la funk, vous pourrez retrouver morceaux d'artistes récurrents nous inspirant, tels que Louis Cole ou Jamiroquai :
+        Du côté de la funk, vous pourrez retrouver des morceaux d'artistes récurrents nous inspirant, tels que Louis Cole ou Jamiroquai :
       </p>
 
       <p class="audios">
