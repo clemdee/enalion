@@ -7,7 +7,7 @@ export interface ParsedDate {
 }
 
 const matchDate = (date: string) => {
-  const dateRegex = /(?<year>\d{4})(?:-(?<month>\d{2})(?:-(?<day>\d{2}))?)?/;
+  const dateRegex = /^(?<year>\d{4})(?:-(?<month>\d{2})(?:-(?<day>\d{2}))?)?$/u;
   const parsedDate = (date.match(dateRegex)?.groups ?? {}) as ParsedDate;
   return parsedDate;
 };
@@ -15,16 +15,11 @@ const matchDate = (date: string) => {
 export interface ParsedTime {
   hours?: string
   minutes?: string
-  pastMidnight?: boolean
 }
 
 const matchTime = (time?: string) => {
-  const timeRegex = /(?<pastMidnight>!)?(?<hours>\d{2}):(?<minutes>\d{2})/;
-
+  const timeRegex = /^(?<hours>\d{2}):(?<minutes>\d{2})$/u;
   const parsedTime = (time?.match(timeRegex)?.groups ?? {}) as ParsedTime;
-  if (parsedTime.pastMidnight) {
-    parsedTime.pastMidnight = true;
-  }
   return parsedTime;
 };
 
@@ -67,7 +62,7 @@ const resolveDate = ({ date, time }: {
         hasDay: true,
         hasHours: true,
         hasMinutes: true,
-        pastMidnight: false,
+        pastMidnight: date.getHours() < 6,
       },
     ];
   }
@@ -84,7 +79,7 @@ const resolveDate = ({ date, time }: {
       hasDay: !!parsedDate.day,
       hasHours: !!parsedTime.hours,
       hasMinutes: !!parsedTime.minutes,
-      pastMidnight: !!parsedTime.pastMidnight,
+      pastMidnight: (parsedTime.hours && +parsedTime.hours < 6) || false,
     },
   ];
 };
