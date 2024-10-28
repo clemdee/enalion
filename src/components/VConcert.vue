@@ -84,7 +84,13 @@
             />
             <span class="separator" />
             <span>
-              <a :href="props.concert.website">Plus d'information</a>
+              <a
+                :href="props.concert.website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Plus d'information
+              </a>
             </span>
           </p>
         </div>
