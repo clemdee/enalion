@@ -11,11 +11,12 @@
     @mouseleave="opened = false"
   >
     <div class="head">
-      <RouterLink to="/collective" @click="clickHandler">
+      <RouterLink to="/reference" @click="clickHandler">
         Le Collectif
       </RouterLink>
       <button
         class="chevron"
+        name="open"
         :disabled="opened"
         @click="openDropdown"
       >
@@ -31,7 +32,10 @@
         icon="line-md:chevron-small-down"
       />
       <div class="sub-links">
-        <RouterLink to="/collective" @click="clickHandler">
+        <RouterLink to="/reference" @click="clickHandler">
+          Références
+        </RouterLink>
+        <RouterLink to="/members" @click="clickHandler">
           Membres
         </RouterLink>
         <RouterLink to="/gallery" @click="clickHandler">

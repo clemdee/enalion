@@ -57,6 +57,7 @@ body {
   background-color: var(--background-color);
   font-family: neucha;
   font-size: 1.4rem;
+  line-height: 1.2em;
   color: var(--font-color);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -74,6 +75,10 @@ section {
   min-width: 100%;
   z-index: 10;
   padding: 3rem max(2rem, min(5rem, 10%));
+}
+
+p {
+  backdrop-filter: blur(0.2rem);
 }
 
 a {

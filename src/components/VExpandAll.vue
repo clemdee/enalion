@@ -2,6 +2,7 @@
   <button
     class="expand-all"
     :class="[mode]"
+    :name="mode"
     @click="handleClick"
   >
     <iconify-icon

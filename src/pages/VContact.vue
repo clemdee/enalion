@@ -17,7 +17,6 @@
           </a>
         </div>
 
-        <!--
         <div ref="phone" class="item phone">
           <a href="#">
             <iconify-icon
@@ -26,7 +25,6 @@
             <em class="text" />
           </a>
         </div>
-        -->
 
         <div class="item instagram">
           <a
@@ -71,34 +69,21 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import { onMounted, useTemplateRef } from 'vue';
+import { useHead } from '~/composables/head';
 
 useHead({
-  title: 'Contact - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Contact',
-    },
-    {
-      name: 'og:description',
-      content: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
-    },
-  ],
+  page: 'Contact',
+  description: `Pour toute demande de renseignements, de collaborations, ou de propositions de concert, n'hésitez pas à nous contacter`,
 });
 
 const emailElement = useTemplateRef('email');
-// const phoneElement = useTemplateRef('phone');
+const phoneElement = useTemplateRef('phone');
 
 onMounted(() => {
   if (!emailElement.value)
     return;
-  // if (!phoneElement.value) return;
+  if (!phoneElement.value) return;
   // Prevent email scraping
   const domain = 'gmail.com';
   const name = 'ENALIONCONTACT';
@@ -107,12 +92,12 @@ onMounted(() => {
   emailElement.value.querySelector('a')?.setAttribute('href', `mailto:${email}`);
   emailElement.value.querySelector('iconify-icon')?.setAttribute('title', email);
   // Prevent phone scraping
-  // const numbersPart1 = '01 23 4'
-  // const numbersPart2 = '5 67 89'
-  // const phone = `${numbersPart1.toLowerCase()}${numbersPart2}`
-  // phoneElement.value.querySelector('.text')!.textContent = phone;
-  // phoneElement.value.querySelector('a')?.setAttribute('href', `tel:${phone}`);
-  // phoneElement.value.querySelector('iconify-icon')?.setAttribute('title', phone);
+  const numbersPart1 = '07 83 4';
+  const numbersPart2 = '2 18 80';
+  const phone = `${numbersPart1.toLowerCase()}${numbersPart2}`;
+  phoneElement.value.querySelector('.text')!.textContent = phone;
+  phoneElement.value.querySelector('a')?.setAttribute('href', `tel:${phone}`);
+  phoneElement.value.querySelector('iconify-icon')?.setAttribute('title', phone);
 });
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <section class="concerts">
     <article class="concerts-type concerts-upcoming">
-      <h2>
+      <h2 id="concerts-upcoming">
         Prochains concerts
       </h2>
 
@@ -37,7 +37,7 @@
     </article>
 
     <article class="concerts-type concerts-past">
-      <h2>
+      <h2 id="concerts-past">
         Concerts passés
       </h2>
 
@@ -61,39 +61,26 @@
 
     <article class="contact">
       <p>
-        Vous organisez un concert ?
+        Vous organisez un concert ?
         <RouterLink to="contact">
-          Contactez nous
-        </RouterLink> !
+          Contactez nous !
+        </RouterLink>
       </p>
     </article>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import { ref } from 'vue';
 import VConcert from '~/components/VConcert.vue';
 import VExpandAll from '~/components/VExpandAll.vue';
+import { useHead } from '~/composables/head';
+import { groupBy } from '~/composables/utils';
 import concerts from '~/data/concerts.json';
-import { groupBy } from '~/utils';
 
 useHead({
-  title: 'Concerts - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Venir écouter Enalion en concert`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Concerts',
-    },
-    {
-      name: 'og:description',
-      content: `Venir écouter Enalion en concert`,
-    },
-  ],
+  page: 'Concerts',
+  description: `Venir écouter Enalion en concert`,
 });
 
 const today = (new Date()).valueOf();
@@ -198,7 +185,7 @@ const upcomingOpened = ref(Array.from({ length: upcoming?.length ?? 0 }).map(() 
 
   .contact {
     margin-top: 4rem;
-    text-align: center;;
+    text-align: center;
     animation: fade-in ease-out 1.2s both;
     animation-delay: 4.5s;
 

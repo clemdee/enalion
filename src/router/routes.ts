@@ -1,9 +1,10 @@
 import VDiscography from '~/pages/VDiscography.vue';
-import VCollective from '../pages/VCollective.vue';
+import VReference from '~/pages/VReference.vue';
 import VConcerts from '../pages/VConcerts.vue';
 import VContact from '../pages/VContact.vue';
 import VGallery from '../pages/VGallery.vue';
 import VHome from '../pages/VHome.vue';
+import VMembers from '../pages/VMembers.vue';
 
 const routes = [
   {
@@ -22,9 +23,14 @@ const routes = [
     component: VConcerts,
   },
   {
-    path: '/collective',
-    name: 'collective',
-    component: VCollective,
+    path: '/members',
+    name: 'members',
+    component: VMembers,
+  },
+  {
+    path: '/reference',
+    name: 'reference',
+    component: VReference,
   },
   {
     path: '/gallery',

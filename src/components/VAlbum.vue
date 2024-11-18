@@ -5,7 +5,7 @@
     <div class="circle" />
 
     <hgroup class="title">
-      <h2>
+      <h2 :id="id">
         {{ props.album.name }}
       </h2>
 
@@ -16,6 +16,13 @@
         />
         {{ props.album.date }}
       </p>
+
+      <div
+        v-if="props.album.upcoming"
+        class="upcoming"
+      >
+        à venir
+      </div>
     </hgroup>
 
     <div class="content">
@@ -28,14 +35,20 @@
       <div
         v-if="props.album.ids"
         class="embedded"
-        :class="[props.display]"
+        :class="[display]"
       >
         <div
-          v-if="props.display"
+          v-if="display"
           class="loading"
         />
+
+        <VAlbumPreview
+          v-if="display === 'preview' && props.album.ids.preview"
+          :id="props.album.ids.preview"
+        />
+
         <iframe
-          v-if="props.display === 'spotify'"
+          v-if="display === 'spotify'"
           :src="`https://open.spotify.com/embed/album/${props.album.ids.spotify}?utm_source=generator&theme=0`"
           width="100%"
           height="352"
@@ -46,7 +59,7 @@
         />
 
         <iframe
-          v-if="props.display === 'youtube'"
+          v-if="display === 'youtube'"
           width="100%"
           height="315"
           :src="`https://www.youtube-nocookie.com/embed/videoseries?list=${props.album.ids.youtube}`"
@@ -58,7 +71,7 @@
         />
 
         <iframe
-          v-if="props.display === 'soundcloud'"
+          v-if="display === 'soundcloud'"
           width="100%"
           height="300"
           scrolling="no"
@@ -72,10 +85,29 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+import { dashify } from '~/composables/utils';
+import VAlbumPreview from './VAlbumPreview.vue';
+
 const props = defineProps<{
   album: Album
-  display?: 'spotify' | 'youtube' | 'soundcloud'
+  display?: Album['display']
 }>();
+
+const display = computed<Album['display'] | undefined>(() => {
+  const display = props.album.display ?? props.display;
+  if (!display) return;
+  if (!props.album.ids) return;
+  if (props.album.ids[display]) return display;
+  // Try to find something to display at least
+  const possibleDisplays: Album['display'][] = ['spotify', 'youtube', 'soundcloud', 'preview'];
+  possibleDisplays.forEach((display) => {
+    if (props.album.ids?.[display]) return display;
+  });
+  return undefined;
+});
+
+const id = computed(() => dashify(props.album.name));
 </script>
 
 <style lang="scss" scoped>
@@ -138,6 +170,14 @@ const props = defineProps<{
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1ch;
+      font-style: italic;
+    }
+
+    .upcoming {
+      background-color: #555;
+      padding: 0.1rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
       font-style: italic;
     }
   }

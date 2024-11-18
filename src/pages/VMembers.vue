@@ -1,12 +1,12 @@
 <template>
-  <section class="collective">
-    <h2>
+  <section class="members">
+    <h2 id="members">
       Le collectif Enalion
     </h2>
 
     <article class="description">
       <p>
-        Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique. Leur répertoire, mélant funk et jazz, en passant par la pop et le rock, a déjà reçu d'excellents retours de la part du public lors de leurs différents concerts.
+        Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique. Leur répertoire, mélant funk et jazz, en passant par la pop et le rock, a déjà reçu d'excellents retours de la part du public lors de leurs différents concerts.
       </p>
 
       <br />
@@ -50,31 +50,18 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue';
 import VMember from '~/components/VMember.vue';
+import { useHead } from '~/composables/head';
 import members from '~/data/members.json';
 
 useHead({
-  title: 'Membres - Enalion',
-  meta: [
-    {
-      name: 'description',
-      content: `Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique.`,
-    },
-    {
-      name: 'og:title',
-      content: 'Enalion - Membres',
-    },
-    {
-      name: 'og:description',
-      content: `Collectif composé de 8 membres actifs, Enalion a vu le jour en 2022 sous l'initiative d'un groupe de jeunes amis voulant échanger leur passion commune pour la musique.`,
-    },
-  ],
+  page: 'Membres',
+  description: `Jeune collectif composé de 8 membres, Enalion a vu le jour en 2022 sous l'initiative d'un groupe d'amis voulant échanger leur passion commune pour la musique.`,
 });
 </script>
 
 <style lang="scss" scoped>
-.collective {
+.members {
   // Cannot use css variables inside media queries, so using scss
   $--breakpoint-low: 50rem;
   $--breakpoint-high: 75rem;
@@ -124,10 +111,6 @@ useHead({
       @media (min-width: $--breakpoint-high) {
         &:nth-child(even) {
           flex-direction: row-reverse;
-          /*
-          align-items: flex-end;
-          margin-top: -30rem;
-          */
           text-align: right;
           text-align-last: end;
         }
