@@ -25,9 +25,9 @@ pnpm dev
 # pnpm dev --host
 ```
 
-[!IMPORTANT]
-Changes on `main` branch will automatically be deployed to production.
-Use the `dev` branch to work on a feature until it is ready to be deployed.
+> [!IMPORTANT]
+> Changes on `main` branch will automatically be deployed to production, so this branch is protected.
+> Use the `dev` branch to work on a feature until it is ready to be deployed.
 
 ## Build for Production
 
