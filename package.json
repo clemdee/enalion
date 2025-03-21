@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@10.6.5",
   "description": "Official Enalion Website",
-  "author": "Clément Desableau<https://github.com/clemdee",
+  "author": "Clément Desableau<https://github.com/clemdee>",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -15,36 +15,43 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "iconify-icon": "^2.1.0",
-    "vue": "^3.4.29",
-    "vue-router": "^4.4.5"
+    "iconify-icon": "^2.3.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
+    "@antfu/eslint-config": "^3.16.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.14.5",
-    "@unhead/vue": "^1.11.6",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@types/node": "^20.17.25",
+    "@unhead/vue": "^1.11.20",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.23.0",
-    "lint-staged": "^15.2.10",
-    "sass": "^1.79.1",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "~5.4.0",
-    "vite": "^5.3.1",
-    "vite-imagetools": "^7.0.4",
-    "vite-plugin-qrcode": "^0.2.3",
-    "vite-plugin-vue-devtools": "^7.3.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "lint-staged": "^15.5.0",
+    "sass": "^1.86.0",
+    "simple-git-hooks": "^2.12.1",
+    "typescript": "~5.4.5",
+    "vite": "^5.4.14",
+    "vite-imagetools": "^7.0.5",
+    "vite-plugin-qrcode": "^0.2.4",
+    "vite-plugin-vue-devtools": "^7.7.2",
     "vite-ssg": "^0.23.8",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "^2.2.8"
   },
   "pnpm": {
     "patchedDependencies": {
-      "sharp@0.33.5": "patches/sharp@0.33.5.patch",
-      "imagetools-core@7.0.1": "patches/imagetools-core@7.0.1.patch"
-    }
+      "sharp@0.33.5": "patches/sharp@0.33.5.patch"
+    },
+    "overrides": {
+      "esbuild@<=0.24.2": ">=0.25.0",
+      "vitest": ">=2.1.9"
+    },
+    "onlyBuiltDependencies": [
+      "sharp",
+      "simple-git-hooks"
+    ]
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
