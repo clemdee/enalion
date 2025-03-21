@@ -1,10 +1,10 @@
 import { ViteSSG } from 'vite-ssg';
-import './assets/styles/reset.scss';
-
-import './assets/styles/base.scss';
 // import { createApp } from 'vue'
 import App from './App.vue';
+
 import routes from './router/routes';
+import './assets/styles/reset.scss';
+import './assets/styles/base.scss';
 import 'iconify-icon';
 
 export const createApp = ViteSSG(
