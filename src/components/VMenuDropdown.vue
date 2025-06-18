@@ -182,7 +182,7 @@ const clickHandler = (event: MouseEvent) => {
 
       .sub-links {
         gap: 2rem;
-        padding: 0;
+        padding: 0rem;
         backdrop-filter: none;
       }
     }
