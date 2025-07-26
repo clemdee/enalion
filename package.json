@@ -43,15 +43,7 @@
   "pnpm": {
     "patchedDependencies": {
       "sharp@0.33.5": "patches/sharp@0.33.5.patch"
-    },
-    "overrides": {
-      "esbuild@<=0.24.2": ">=0.25.0",
-      "vitest": ">=2.1.9"
-    },
-    "onlyBuiltDependencies": [
-      "sharp",
-      "simple-git-hooks"
-    ]
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
