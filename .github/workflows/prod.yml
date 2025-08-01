@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [dev]
+    branches: [prod]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,3 +23,12 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_URL }}
+          username: ${{ secrets.FTP_NAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./www/
